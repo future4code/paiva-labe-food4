@@ -1,11 +1,9 @@
 import React from 'react';
-import {HomePage} from './pages/HomePage/HomePage'
+import Router from './Routes/Router';
 
-
-function App() {
+const App = () => {
   return (
-    <div>
-  <HomePage/>
+    <div><Router/>
     </div>
   );
 }
