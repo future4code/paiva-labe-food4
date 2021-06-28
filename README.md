@@ -36,7 +36,7 @@ Website de uma empresa que intermedia pedidos e entregas de restaurantes
   <img width='150px' height='150px' src='https://ca.slack-edge.com/TLAVDH7C2-U01SL1TGFPW-eebfadefe904-512' >
     </td>
         <td>
-  <img width='150px' height='150px' src='https://ca.slack-edge.com/TLAVDH7C2-U01SVQENQ6Q-a099b9548eb1-512' >
+  <img width='150px' height='150px' src='https://ca.slack-edge.com/TLAVDH7C2-U01SVQENQ6Q-101514f43f07-512' >
     </td>
      <td>
   <img width='150px' height='150px' src='https://ca.slack-edge.com/TLAVDH7C2-U01SE37G5AP-98aeaa93b8ac-512' >
