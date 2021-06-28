@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img width="300px" height="150px" alt="logo" src="/home/adriana/Projetos Labenu/LabeFood4/paiva-labe-food4/src/assets/img/logo-future-eats-invert@3x.png" />
+    <img width="300px" height="150px" alt="logo" src="https://github.com/future4code/paiva-labe-food4/blob/master/logo-future-eats-invert@3x.png" />
     <br>    
 </h1>
 <br/>
