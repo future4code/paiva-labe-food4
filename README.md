@@ -1,18 +1,23 @@
 <h1 align="center">
-    <img width="300px" height="150px" alt="logo" src="/img/logo-future-eats-invert@3x.png" />
+    <img width="300px" height="150px" alt="logo" src="/home/adriana/Projetos Labenu/LabeFood4/paiva-labe-food4/src/assets/img/logo-future-eats-invert@3x.png" />
     <br>    
 </h1>
+<br/>
 
-## :rocket: Tecnologias
-Este projeto foi desenvolvido usando as seguintes tecnologias:
+### Descrição do projeto:
+
+Website de uma empresa que intermedia pedidos e entregas de restaurantes
+<br/>
+<br/>
+
+### Tecnologias utilizadas:
 
 - [ReactJS](https://reactjs.org/)
 - [styled-components](https://www.styled-components.com/)
-- [chakra-ui](https://chakra-ui.com/docs/getting-started)
 - [axios](https://github.com/axios/axios)
 - [material-ui](https://material-ui.com/pt/)
 
-
+<br/>
 
 ### Integrantes do grupo de desenvolvimento
 <table>
@@ -41,16 +46,23 @@ Este projeto foi desenvolvido usando as seguintes tecnologias:
     </td>
   </tr>
 <table>
+<br/>
 
-Link: www.link.com.br
+### Link: 
+www.link.com.br
 
-O que funciona:
-- 
-- 
-- 
+<br/>
 
+### O que funciona:
+- 
+- 
+- 
+-
 
-O que não funciona: 
+<br/>
+
+### O que não funciona: 
 - 
 - 
 - 
+-
