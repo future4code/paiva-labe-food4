@@ -1,15 +1,16 @@
 import { Button, TextField, Typography } from '@material-ui/core'
 import React from 'react'
-import { LogoBoard, ScreenContainer, SignUpContainer } from './styled'
+import { LogoBoard, ScreenContainer, SignUpContainer, MainContainer } from './styled'
 import LogoColorida from '../../assets/LogoRappi4Colored.svg'
 
 const SignupPage = () => {
     return (
         <ScreenContainer>
+        <MainContainer>
             <LogoBoard src={LogoColorida} alt="logo Rappi4" />
             <SignUpContainer>
-                <Typography component="h1" variant="h5">
-                    Cadastrar!
+                <Typography  variant="h6">
+                    Cadastro
                 </Typography>
                 <form onSubmit={''}>
                     <TextField
@@ -78,10 +79,11 @@ const SignupPage = () => {
                         variant="contained"
                         color="primary"
                     >
-                        Criar
+                        Continuar Cadastro
                     </Button>
                 </form>
             </SignUpContainer>
+        </MainContainer>
         </ScreenContainer>
     )
 }
