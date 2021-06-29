@@ -7,7 +7,7 @@ import {
   SignUpDiv,
 } from "./styled";
 import LogoColorida from "../../assets/LogoRappi4Colored.svg";
-import SignupPage from "../SignupPage/SignupPage";
+import { goToSignUp } from "../../Routes/coordinator";
 import LoginForm from "./LoginForm";
 import { useHistory } from "react-router-dom";
 
@@ -20,7 +20,7 @@ const LoginPage = () => {
         <LogoBoard src={LogoColorida} alt="logo Rappi4" />
         <LoginForm />
         <SignUpDiv>
-          <p>Não possui cadastro?<Link href="#" onClick={SignupPage} variant="body2">
+          <p>Não possui cadastro?<Link onClick={() => goToSignUp(history)} variant="body2">
             {"Cadastre-se"}
           </Link></p>
         </SignUpDiv>
