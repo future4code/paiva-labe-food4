@@ -12,7 +12,6 @@ const LoginForm = () => {
   const onSubmitForm = (e) => {
     e.preventDefault();
     login(form, clear, history);
-
   };
   return (
         <LoginContainer>
