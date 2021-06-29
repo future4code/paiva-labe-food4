@@ -6,7 +6,7 @@ const SignupAddPage = () => {
     return (
         <ScreenContainer>
             <SignUpAddContainer>
-                <Typography component="h1" variant="h5">
+                <Typography  variant="h6">
                     Meu Endereço
                 </Typography>
                 <form onSubmit={''}>
@@ -93,6 +93,7 @@ const SignupAddPage = () => {
                         fullWidth
                         variant="contained"
                         color="primary"
+                        margin="normal"
                     >
                         Salvar
                     </Button>
