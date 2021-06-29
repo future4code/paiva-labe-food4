@@ -8,7 +8,6 @@ import MenuPage from "../Pages/MenuPage/MenuPage";
 import ProfilePage from "../Pages/ProfilePage/ProfilePage";
 import CartPage from "../Pages/CartPage/CartPage";
 import SplashPage from "../Pages/SplashPage/SplashPage";
-import AddAddressPage from "../Pages/AddAddressPage/AddAddressPage";
 
 const Router = () => {
     return (
@@ -21,7 +20,6 @@ const Router = () => {
                 <Route exact path="/menu" component={MenuPage} />
                 <Route exact path="/profile" component={ProfilePage} />
                 <Route exact path="/cart" component={CartPage} />
-                <Route exact path="/address" component={AddAddressPage} />
                 <Route exact path="/splash" component={SplashPage} />
             </Switch>
         </BrowserRouter>
