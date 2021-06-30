@@ -13,6 +13,7 @@ const Router = () => {
     return (
         <BrowserRouter>
             <Switch>
+                <Route exact path="/" component={SplashPage} />
                 <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/signup" component={SignupPage} />
                 <Route exact path="/signupadd" component={SignupAddPage} />
@@ -20,7 +21,6 @@ const Router = () => {
                 <Route exact path="/menu" component={MenuPage} />
                 <Route exact path="/profile" component={ProfilePage} />
                 <Route exact path="/cart" component={CartPage} />
-                <Route exact path="/splash" component={SplashPage} />
             </Switch>
         </BrowserRouter>
     )

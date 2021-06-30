@@ -1,12 +1,12 @@
 import axios from "axios"
-import { BASE_URL } from "../constants/urls"
+import { axiosConfig, BASE_URL } from "../constants/urls"
 import { goToFeed, goToSignUpAdd } from '../Routes/coordinator'
 
 export const login = (body, clear, history, setIsLoading) => {
     setIsLoading(true)
     axios.post(`${BASE_URL}/login`, body)
-        .then((res) => {
-            localStorage.setItem("token", res.data.token)
+        .then((response) => {
+            localStorage.setItem("token", response.data.token)
             clear()
             setIsLoading(false)
             goToFeed(history)
@@ -19,12 +19,28 @@ export const login = (body, clear, history, setIsLoading) => {
 
 export const signup = (body, clear, history) => {
     axios.post(`${BASE_URL}/signup`, body)
-    .then((res) => {
-        localStorage.setItem("token", res.data.token)
-        clear()
-        goToSignUpAdd(history)
-    })
-    .catch((err) => {
-        alert(err.response.data.message)
-    })
+        .then((response) => {
+            localStorage.setItem("token", response.data.token)
+            clear()
+            goToSignUpAdd(history)
+            console.log(response.data.message)
+        })
+        .catch((error) => {
+            alert('dados inválidos')
+            console.log(error.response.data.message)
+        })
 }
+
+export const addaddress = (body, clear, history) => {
+    axios.put(`${BASE_URL}/address`, body, axiosConfig)
+        .then(response => {
+            localStorage.setItem('token', response.data.token)
+            clear()
+            alert('Cadastro feito com sucesso!')
+            goToFeed(history)
+        }).catch((error) => {
+            console.log(error.response.data.message)
+            alert('Erro na criação do  cadastro')
+        })
+}
+
