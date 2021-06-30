@@ -7,14 +7,13 @@ import FeedPage from "../Pages/FeedPage/FeedPage";
 import MenuPage from "../Pages/MenuPage/MenuPage";
 import ProfilePage from "../Pages/ProfilePage/ProfilePage";
 import CartPage from "../Pages/CartPage/CartPage";
-import SplashPage from "../Pages/SplashPage/SplashPage";
+
 
 const Router = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={SplashPage} />
-                <Route exact path="/login" component={LoginPage} />
+                <Route exact path="/" component={LoginPage} />
                 <Route exact path="/signup" component={SignupPage} />
                 <Route exact path="/signupadd" component={SignupAddPage} />
                 <Route exact path="/feed" component={FeedPage} />
