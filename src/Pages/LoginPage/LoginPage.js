@@ -1,5 +1,5 @@
 import { Link } from "@material-ui/core";
-import React from "react";
+import React, {useState, useEffect} from 'react';
 import {
   ScreenContainer,
   LogoBoard,
@@ -11,12 +11,27 @@ import { goToSignUp } from "../../Routes/coordinator";
 import LoginForm from "./LoginForm";
 import { useHistory } from "react-router-dom";
 
+import SplashPage from "../SplashPage/SplashPage";
+
+
 const LoginPage = () => {
   const history = useHistory();
+  const  [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 2500)
+  }, [])
+  
   return (
     <ScreenContainer>
-      <MainContainer>
+         {
+      loading ? 
+      <SplashPage/>
+      :
+ <MainContainer>
         <LogoBoard src={LogoColored} alt="logo Rappi4" />
         <LoginForm />
         <SignUpDiv>
@@ -25,6 +40,9 @@ const LoginPage = () => {
           </Link></p>
         </SignUpDiv>
       </MainContainer>
+      
+    }
+     
     </ScreenContainer>
   );
 };
