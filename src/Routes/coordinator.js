@@ -1,3 +1,7 @@
+export const goToSplash = (history) => {
+    history.push("/")
+}
+
 export const goToLogin = (history) => {
     history.push("/login")
 }
@@ -26,7 +30,4 @@ export const goToCart = (history) => {
     history.push("/cart")
 }
 
-export const goToSplash = (history) => {
-    history.push("/splash")
-}
 

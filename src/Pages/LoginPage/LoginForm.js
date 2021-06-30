@@ -5,8 +5,8 @@ import useForm from "../../hooks/useForm";
 import { useHistory } from "react-router-dom";
 import { login } from "../../services/User";
 
-
 const LoginForm = () => {
+
   const history = useHistory();
   const [form, onChange, clear] = useForm({ email: "", password: "" });
   const onSubmitForm = (e) => {
@@ -14,44 +14,44 @@ const LoginForm = () => {
     login(form, clear, history);
   };
   return (
-        <LoginContainer>
-          <Typography variant="h6">Entrar</Typography>
-          <form obSubmit={onSubmitForm}>
-            <TextField
-              id="email"
-              name="email"
-              value={form.email}
-              onChange={onChange}
-              type="email"
-              label="E-mail"
-              variant="outlined"
-              defaultValue="email@email.com"
-              required
-              margin="normal"
-              autoFocus
-              fullWidth
-            />
-            <TextField
-              id="password"
-              name="password"
-              value={form.password}
-              onChange={onChange}
-              type="password"
-              label="Senha"
-              variant="outlined"
-              defaultValue="Mínimo 6 caracteres"
-              required
-              margin="normal"
-              autoFocus
-              fullWidth
-              color="secondary"
-            />
-          <Button type="submit" variant="contained" color="primary" fullWidth>
-            Entrar
-          </Button>
-          </form>
-          {console.log(form)}
-        </LoginContainer>
+    <LoginContainer>
+      <Typography variant="h6">Entrar</Typography>
+      <form obSubmit={onSubmitForm}>
+        <TextField
+          id="email"
+          name="email"
+          value={form.email}
+          onChange={onChange}
+          type="email"
+          label="E-mail"
+          variant="outlined"
+          defaultValue="email@email.com"
+          required
+          margin="normal"
+          autoFocus
+          fullWidth
+        />
+        <TextField
+          id="password"
+          name="password"
+          value={form.password}
+          onChange={onChange}
+          type="password"
+          label="Senha"
+          variant="outlined"
+          defaultValue="Mínimo 6 caracteres"
+          required
+          margin="normal"
+          autoFocus
+          fullWidth
+          color="secondary"
+        />
+        <Button type="submit" variant="contained" color="primary" fullWidth>
+          Entrar
+        </Button>
+      </form>
+      {console.log(form)}
+    </LoginContainer>
   );
 };
 

@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img width="300px" height="150px" alt="logo" src="https://github.com/future4code/paiva-labe-food4/blob/master/logo-future-eats-invert@3x.png" />
+    <img width="300px" height="150px" alt="logo" src="https://github.com/future4code/paiva-labe-food4/blob/master/src/assets/LogoRappi4Colored.svg" />
     <br>    
 </h1>
 
