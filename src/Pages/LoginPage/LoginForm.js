@@ -4,6 +4,7 @@ import { LoginContainer } from "./styled";
 import useForm from "../../hooks/useForm";
 import { useHistory } from "react-router-dom";
 import { login } from "../../services/User";
+import { goToFeed } from "../../Routes/coordinator";
 
 const LoginForm = () => {
   const history = useHistory();
@@ -45,13 +46,11 @@ const LoginForm = () => {
           autoFocus
           fullWidth
           color="secondary"
-          inputProps={{ pattern: "[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" }}
         />
-        <Button type="submit" variant="contained" color="primary" fullWidth>
+        <Button type="submit" variant="contained" color="primary" fullWidth onClick={() => goToFeed(history)}>
           Entrar
         </Button>
       </form>
-      {console.log(form)}
     </LoginContainer>
   );
 };

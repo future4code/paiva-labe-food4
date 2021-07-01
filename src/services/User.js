@@ -38,7 +38,7 @@ export const addaddress = (body, clear, history) => {
         }
     })
         .then(response => {
-            window.localStorage.setItem('token', response.data.token)
+            localStorage.setItem('token', response.data.token)
             clear()
             alert('Cadastro feito com sucesso!')
             goToFeed(history)
