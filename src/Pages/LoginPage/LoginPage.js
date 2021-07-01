@@ -22,7 +22,7 @@ const LoginPage = () => {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 0)
+    }, 2500)
   }, [])
 
   return (
