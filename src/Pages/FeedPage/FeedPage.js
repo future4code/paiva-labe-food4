@@ -15,6 +15,8 @@ import useRequestData from "../../hooks/useRequestData";
 import { BASE_URL } from "../../constants/urls";
 import { goToMenu } from "../../Routes/coordinator";
 import RestCard from "../../components/Card/RestCard";
+import { useHistory } from "react-router-dom";
+
 
 
 
@@ -39,24 +41,28 @@ const useStyles = makeStyles((theme) => ({
 
 const FeedPage = () => {
   useProtectedPage()
-  const restaurants = useRequestData([],`${BASE_URL}/restaurants`)
+  const history = useHistory()
+  const getRestaurants = useRequestData(`${BASE_URL}/restaurants`, []);
 
-  const onClickCard = (id) => {
-    goToMenu (id)
+  const onClickCard = () => {
+    goToMenu(history)
   }
 
-  const restaurantsCards = restaurants.map((restaurant) => {
-    return(
-      <RestCard
-      key={restaurant.id}
-      name={restaurant.name}
-      image={restaurant.logoUrl}
-      time={restaurant.deliveryTime}
-      shipping={restaurant.shipping}
-      onClick={() => onClickCard(restaurant.id)}
-      />
-    )
-  })
+  {
+    getRestaurants && getRestaurants.restaurants && getRestaurants.restaurants.map((restaurant) => {
+      return (
+        <RestCard
+          restaurant={restaurant}
+          key={restaurant.id}
+          name={restaurant.name}
+          image={restaurant.logoUrl}
+          time={restaurant.deliveryTime}
+          shipping={restaurant.shipping}
+          onClick={() => onClickCard(restaurant.id)}
+        />
+      )
+    })
+  }
 
   const classes = useStyles();
 
@@ -78,7 +84,7 @@ const FeedPage = () => {
             <SearchIcon />
           </IconButton>
         </Paper>
-        {restaurantsCards}
+        
         <Footer />
       </MainContainerFeed>
     </ScreenContainer>
