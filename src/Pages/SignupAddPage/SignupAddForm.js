@@ -3,7 +3,7 @@ import { Button, TextField, Typography } from '@material-ui/core';
 import { SignUpAddContainer } from './styled';
 import { useHistory } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
-import { signup } from '../../services/User';
+import { addaddress } from '../../services/User';
 
 const SignupAddForm = () => {
     const history = useHistory();
@@ -13,7 +13,7 @@ const SignupAddForm = () => {
 
     const onSubmitForm = (e) => {
         e.preventDefault();
-        signup(form, clear, history);
+        addaddress(form, clear, history);
     };
 
     return (
@@ -24,17 +24,16 @@ const SignupAddForm = () => {
             <form onSubmit={onSubmitForm}>
                 <TextField
                     onChange={onChange}
-                    value={form.address}
+                    value={form.street}
                     variant="outlined"
                     margin="normal"
                     required
                     fullWidth
-                    id="address"
+                    id="street"
                     label="Logradouro"
-                    name="address"
-                    autoComplete="logradouro"
+                    name="street"
+                    autoComplete="street"
                     autoFocus
-                    type='text'
                 />
                 <TextField
                     onChange={onChange}
@@ -48,20 +47,6 @@ const SignupAddForm = () => {
                     name="number"
                     autoComplete="number"
                     autoFocus
-                    type='number'
-                />
-                <TextField
-                    value={form.complement}
-                    onChange={onChange}
-                    variant="outlined"
-                    margin="normal"
-                    fullWidth
-                    id="complement"
-                    label="Complemento"
-                    name="complement"
-                    autoComplete="complement"
-                    autoFocus
-                    type='text'
                 />
                 <TextField
                     value={form.neighbourhood}
@@ -75,7 +60,6 @@ const SignupAddForm = () => {
                     name="neighbourhood"
                     autoComplete="neighbourhood"
                     autoFocus
-                    type='text'
                 />
                 <TextField
                     value={form.city}
@@ -89,7 +73,6 @@ const SignupAddForm = () => {
                     name="city"
                     autoComplete="city"
                     autoFocus
-                    type='text'
                 />
                 <TextField
                     value={form.state}
@@ -103,7 +86,6 @@ const SignupAddForm = () => {
                     name="state"
                     autoFocus
                     autoComplete="state"
-                    type='text'
                 />
                 <Button
                     type="submit"

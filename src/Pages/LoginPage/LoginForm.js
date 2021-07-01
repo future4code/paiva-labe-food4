@@ -6,9 +6,9 @@ import { useHistory } from "react-router-dom";
 import { login } from "../../services/User";
 
 const LoginForm = () => {
-
   const history = useHistory();
   const [form, onChange, clear] = useForm({ email: "", password: "" });
+
   const onSubmitForm = (e) => {
     e.preventDefault();
     login(form, clear, history);
@@ -45,6 +45,7 @@ const LoginForm = () => {
           autoFocus
           fullWidth
           color="secondary"
+          inputProps={{ pattern: "[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" }}
         />
         <Button type="submit" variant="contained" color="primary" fullWidth>
           Entrar

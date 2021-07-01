@@ -1,5 +1,5 @@
 import axios from "axios"
-import { axiosConfig, BASE_URL } from "../constants/urls"
+import { BASE_URL } from "../constants/urls"
 import { goToFeed, goToSignUpAdd } from '../Routes/coordinator'
 
 export const login = (body, clear, history, setIsLoading) => {
@@ -32,9 +32,13 @@ export const signup = (body, clear, history) => {
 }
 
 export const addaddress = (body, clear, history) => {
-    axios.put(`${BASE_URL}/address`, body, axiosConfig)
+    axios.put(`${BASE_URL}/address`, body, {
+        headers: {
+            auth: window.localStorage.getItem("token")
+        }
+    })
         .then(response => {
-            localStorage.setItem('token', response.data.token)
+            window.localStorage.setItem('token', response.data.token)
             clear()
             alert('Cadastro feito com sucesso!')
             goToFeed(history)
