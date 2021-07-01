@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { ScreenContainer } from './styled';
+import SignupAddForm from './SignupAddForm';
 
 const SignupAddPage = () => {
+
     return (
-        <div>SignupAddPage</div>
+        <ScreenContainer>
+            <SignupAddForm />
+        </ScreenContainer>
     )
 }
 
-export default SignupAddPage
+export default SignupAddPage;

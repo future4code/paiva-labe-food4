@@ -8,19 +8,20 @@ import MenuPage from "../Pages/MenuPage/MenuPage";
 import ProfilePage from "../Pages/ProfilePage/ProfilePage";
 import CartPage from "../Pages/CartPage/CartPage";
 
+
 const Router = () => {
     return (
         <BrowserRouter>
-       <Switch>
-           <Route exact path="/login" name={LoginPage}/>
-           <Route exact path="/signup" name={SignupPage}/>
-           <Route exact path="/signupadd" name={SignupAddPage}/>
-           <Route exact path="/feed" name={FeedPage}/>
-           <Route exact path="/menu" name={MenuPage}/>
-           <Route exact path="/profile" name={ProfilePage}/>
-           <Route exact path="/cart" name={CartPage}/>
-       </Switch>
-       </BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={LoginPage} />
+                <Route exact path="/signup" component={SignupPage} />
+                <Route exact path="/signupadd" component={SignupAddPage} />
+                <Route exact path="/feed" component={FeedPage} />
+                <Route exact path="/menu" component={MenuPage} />
+                <Route exact path="/profile" component={ProfilePage} />
+                <Route exact path="/cart" component={CartPage} />
+            </Switch>
+        </BrowserRouter>
     )
 }
 
