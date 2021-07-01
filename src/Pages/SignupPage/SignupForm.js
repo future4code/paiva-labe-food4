@@ -53,7 +53,6 @@ const SignupForm = () => {
                     margin="normal"
                     value={form.cpf}
                     onChange={onChange}
-                    type="text"
                     inputProps={{ pattern: "[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" }}
                     required
                     fullWidth
@@ -70,7 +69,7 @@ const SignupForm = () => {
                     fullWidth
                     name="password"
                     label="Senha"
-                    //type="password"
+                    type="password"
                     id="password"
                 />
                 <TextField
@@ -80,9 +79,9 @@ const SignupForm = () => {
                     onChange={onChange}
                     required
                     fullWidth
-                    name="confirmPassword"
+                    name="confirm"
                     label="Confirmar a senha"
-                    //type="password"
+                    type="password"
                     id="confirm"
                 />
                 <Button
@@ -90,6 +89,7 @@ const SignupForm = () => {
                     fullWidth
                     variant="contained"
                     color="primary"
+                    margin="normal"
                 >
                     Continuar Cadastro
                 </Button>
