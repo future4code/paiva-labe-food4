@@ -28,4 +28,7 @@ export const goToCart = (history) => {
     history.push("/cart")
 }
 
+export const goBack = (history) => {
+    history.goBack()
+}
 

@@ -9,7 +9,9 @@ import {
   ScreenContainer,
   MainContainerFeed,
 } from "../../components/Screens/ScreenContainers";
-import { Header } from "../../components/Header/Header";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     width: '250px',
     marginBottom: '80vh',
+    marginTop: '5px'
     },
   input: {
     marginLeft: theme.spacing(1),
@@ -38,11 +41,10 @@ const FeedPage = () => {
   return (
  
     <ScreenContainer>
-        <Header>
-            <p>Rappi4</p>
-        </Header>
       <MainContainerFeed>
-
+      <Header>
+        <p>Rappi4</p>
+      </Header>
       <Paper component="form" className={classes.root}>
       <InputBase>
         className={classes.input}
@@ -54,7 +56,7 @@ const FeedPage = () => {
         <SearchIcon />
       </IconButton>
       </Paper>
-         
+      <Footer/>
       </MainContainerFeed>
     </ScreenContainer>
   );
