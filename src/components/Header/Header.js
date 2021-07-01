@@ -1,11 +1,17 @@
-import styled from "styled-components";
+import React from 'react'
+import { Head } from './styled';
+import ArrowBackIosOutlinedIcon from '@material-ui/icons/ArrowBackIosOutlined';
+import { useHistory } from 'react-router-dom';
+import { goBack } from '../../Routes/coordinator';
 
-export const Header = styled.header `
-width: 100vw;
-min-height:10vh;
-display: flex;
-align-items:center;
-justify-content: center;
-background-color: red;
-border-bottom: 1px solid gray;
-`
+
+const Header = () => {
+    const history = useHistory();
+    return (
+        <Head>
+            <ArrowBackIosOutlinedIcon onClick={() => goBack(history)}/>
+        </Head>
+    )
+}
+
+export default Header

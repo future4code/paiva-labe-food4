@@ -2,11 +2,13 @@ import React from 'react'
 import { LogoBoard, ScreenContainer, MainContainer } from './styled'
 import LogoColored from '../../assets/LogoRappi4Colored.svg'
 import SignupForm from './SignupForm'
+import Header from '../../components/Header/Header'
 
 const SignupPage = () => {
 
     return (
         <ScreenContainer>
+            <Header/>
             <MainContainer>
                 <LogoBoard src={LogoColored} alt="logo Rappi4" />
                 <SignupForm />

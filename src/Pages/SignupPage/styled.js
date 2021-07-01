@@ -11,11 +11,12 @@ export const ScreenContainer = styled.body`
 `;
 export const MainContainer = styled.div`
   width: 80vw;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  margin-top: 5vh;
 `;
 export const SignUpContainer = styled.div`
   width: 80vw;
