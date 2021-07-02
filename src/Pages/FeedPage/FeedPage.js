@@ -47,9 +47,9 @@ const FeedPage = () => {
   const onClickCard = () => {
     goToMenu(history)
   }
-
-  {
-    getRestaurants && getRestaurants.restaurants && getRestaurants.restaurants.map((restaurant) => {
+    
+  
+   const restaurantsMap = getRestaurants && getRestaurants.restaurants && getRestaurants.restaurants.map((restaurant) => {
       return (
         <RestCard
           restaurant={restaurant}
@@ -62,8 +62,8 @@ const FeedPage = () => {
         />
       )
     })
-  }
-
+  
+  
   const classes = useStyles();
 
   return (
@@ -84,7 +84,8 @@ const FeedPage = () => {
             <SearchIcon />
           </IconButton>
         </Paper>
-        
+        {restaurantsMap}
+        {console.log(getRestaurants.restaurants)}
         <Footer />
       </MainContainerFeed>
     </ScreenContainer>
