@@ -1,27 +1,21 @@
 import React from 'react'
-import { ContentContainer, ScreenContainer, MainContainerFeed, ContainerImg } from './styled'
+import { ContentContainer, ContainerImg, ContentContainer2, RestCardContainer } from './styled'
 import { StyledImg } from './styled'
-import Header from '../Header/Header'
+
 const RestCard = (props) => {
 
   return (
-
-    <ScreenContainer>
-      <Header />
-      <MainContainerFeed>
-        <ContainerImg>
-          <StyledImg src={props.image}></StyledImg>
-        </ContainerImg>
-        <ContentContainer>
-          <p>{props.name}</p>
-        </ContentContainer>
-        <ContentContainer>
-
-          <p>Frete R$:{props.shipping},00</p>
-        </ContentContainer>
-
-      </MainContainerFeed>
-    </ScreenContainer>
+    <RestCardContainer>
+      <ContainerImg>
+        <StyledImg src={props.image}></StyledImg>
+      </ContainerImg>
+      <ContentContainer>
+        <p>{props.name}</p>
+      </ContentContainer>
+      <ContentContainer2>
+        <p>Frete R$:{props.shipping},00</p>
+      </ContentContainer2>
+    </RestCardContainer>
   )
 }
 
