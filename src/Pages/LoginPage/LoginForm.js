@@ -19,35 +19,32 @@ const LoginForm = () => {
       <Typography variant="h6">Entrar</Typography>
       <form obSubmit={onSubmitForm}>
         <TextField
-          id="email"
-          name="email"
+          id={"email"}
+          name={"email"}
           value={form.email}
           onChange={onChange}
-          type="email"
-          label="E-mail"
-          variant="outlined"
-          defaultValue="email@email.com"
+          type={"email"}
+          label={"E-mail"}
+          variant={"outlined"}
           required
-          margin="normal"
+          margin={"normal"}
           autoFocus
           fullWidth
         />
         <TextField
-          id="password"
-          name="password"
+          id={"password"}
+          name={"password"}
           value={form.password}
           onChange={onChange}
-          type="password"
-          label="Senha"
-          variant="outlined"
-          defaultValue="Mínimo 6 caracteres"
+          type={"password"}
+          label={"Senha"}
+          variant={"outlined"}
           required
-          margin="normal"
+          margin={"normal"}
           autoFocus
           fullWidth
-          color="secondary"
         />
-        <Button type="submit" variant="contained" color="primary" fullWidth onClick={() => goToFeed(history)}>
+        <Button type={"submit"} variant={"contained"} color={"primary"} fullWidth onClick={() => goToFeed(history)}>
           Entrar
         </Button>
       </form>

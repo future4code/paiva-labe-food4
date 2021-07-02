@@ -17,9 +17,6 @@ import { goToMenu } from "../../Routes/coordinator";
 import RestCard from "../../components/Card/RestCard";
 import { useHistory } from "react-router-dom";
 
-
-
-
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: '4px 6px 4px 15px',
@@ -84,7 +81,7 @@ const FeedPage = () => {
             <SearchIcon />
           </IconButton>
         </Paper>
-        
+
         <Footer />
       </MainContainerFeed>
     </ScreenContainer>
