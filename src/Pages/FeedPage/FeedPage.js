@@ -45,21 +45,21 @@ const FeedPage = () => {
     goToMenu(history)
   }
 
-  {
-    getRestaurants && getRestaurants.restaurants && getRestaurants.restaurants.map((restaurant) => {
-      return (
-        <RestCard
-          restaurant={restaurant}
-          key={restaurant.id}
-          name={restaurant.name}
-          image={restaurant.logoUrl}
-          time={restaurant.deliveryTime}
-          shipping={restaurant.shipping}
-          onClick={() => onClickCard(restaurant.id)}
-        />
-      )
-    })
-  }
+
+  const restaurantsMap = getRestaurants && getRestaurants.restaurants && getRestaurants.restaurants.map((restaurant) => {
+    return (
+      <RestCard
+        restaurant={restaurant}
+        key={restaurant.id}
+        name={restaurant.name}
+        image={restaurant.logoUrl}
+        time={restaurant.deliveryTime}
+        shipping={restaurant.shipping}
+        onClick={() => onClickCard(restaurant.id)}
+      />
+    )
+  })
+
 
   const classes = useStyles();
 
@@ -81,7 +81,8 @@ const FeedPage = () => {
             <SearchIcon />
           </IconButton>
         </Paper>
-
+        {restaurantsMap}
+        {console.log(getRestaurants.restaurants)}
         <Footer />
       </MainContainerFeed>
     </ScreenContainer>
