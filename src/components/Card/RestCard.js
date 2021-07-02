@@ -1,27 +1,29 @@
 import React from 'react'
-import CardActionArea from '@material-ui/core/CardActionArea'
-import CardMedia from '@material-ui/core/CardMedia'
-import Typography from '@material-ui/core/Typography'
-import { StyledCardContent, RestCardContainer } from './styled'
 
+import { ContentContainer, ScreenContainer, MainContainerFeed, ContainerImg } from './styled'
+import { StyledImg } from './styled'
+import  Header  from '../Header/Header'
 const RestCard = (props) => {
 
+
   return (
-    <RestCardContainer onClick={props.onClick}>
-      <CardActionArea>
-        <CardMedia
-          component={'img'}
-          alt={"logo"}
-          height={'150px'}
-          image={props.restaurant.logoUrl}
-        />
-        <StyledCardContent>
-          <Typography align={'center'}>
-            {props.restaurant.name.toUpperCase()}
-          </Typography>
-        </StyledCardContent>
-      </CardActionArea>
-    </RestCardContainer>
+
+<ScreenContainer>
+  <Header/>
+    <MainContainerFeed>
+     <ContainerImg>
+  <StyledImg src= {props.image}></StyledImg>
+  </ContainerImg>
+  <ContentContainer>
+  <p>{props.name}</p>
+  </ContentContainer>
+  <ContentContainer>
+  
+   <p>Frete R$:{props.shipping},00</p>
+   </ContentContainer>
+   
+   </MainContainerFeed>
+  </ScreenContainer>
   )
 }
 

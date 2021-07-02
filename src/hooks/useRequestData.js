@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../constants/urls'
 
-const useRequestData = (initialData, BASE_URL) => {
+const useRequestData = (initialData, url) => {
   const [data, setData] = useState(initialData)
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const useRequestData = (initialData, BASE_URL) => {
         console.log(error.response.data)
         alert('Ocorreu um erro, tente novamente')
       })
-  }, [BASE_URL])
+  }, [])
 
   return (data)
 }
