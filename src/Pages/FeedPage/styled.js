@@ -13,6 +13,8 @@ export const MainContainerFeed = styled.div`
   align-items: center;    
 `;
 
+
+
 export const HeaderFeed = styled.header`
     width:100vw;
     height:16vh;

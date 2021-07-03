@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import { useHistory } from "react-router";
-import { setProfile} from "../../services/User"
+//import { useHistory } from "react-router";
 import useProtectedPage from "../../hooks/useProtectedPage";
+import {profile} from "../../services/User"
 
 import {
   ContainerProfilePage,
@@ -14,7 +14,7 @@ import {
 export const ProfilePage = () => {
   useProtectedPage();
   const [profile, setProfile] = useState();
-  const history = useHistory();
+  //const history = useHistory();
 
   return (
     

@@ -60,7 +60,7 @@ export const addaddress = (body, clear, history) => {
 
 // Usuários = pegar dados
 
-export const setProfile = () => {
+export const profile = (body, history) => {
   axios
     .get(`${BASE_URL}/profile`, {
       headers: {
@@ -75,3 +75,20 @@ export const setProfile = () => {
       alert("ERRO CATCH (TESTE)");
     });
 };
+
+//Histórico de pedidos
+
+export const setOrderHistory  = () => {
+  axios.get(`${BASE_URL}/orders/history`,
+  {
+      headers:{
+          auth:localStorage.getItem ("token")
+      }
+  })
+  .then((response) => {
+      setOrderHistory(response.data)
+  })
+  .catch((error)=>{
+      console.log(error)
+  }) 
+}
