@@ -10,7 +10,7 @@ import Footer from "../../components/Footer/Footer";
 import useRequestData from "../../hooks/useRequestData";
 import { BASE_URL } from "../../constants/urls";
 import { goToMenu } from "../../Routes/coordinator";
-import RestCard from "../../components/Card/RestCard";
+import RestCard from "../../components/RestCard/RestCard";
 import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
