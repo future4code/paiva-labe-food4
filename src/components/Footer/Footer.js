@@ -11,9 +11,12 @@ const Footer = () => {
     const history = useHistory();
     return (
         <Foot>
-            <HomeOutlinedIcon onClick={() => goToFeed(history)}/>
-            <ShoppingCartOutlinedIcon onClick={() => goToCart(history)}/>
-            <PersonOutlineOutlinedIcon onClick={() => goToProfile(history)}/>
+            <div> <HomeOutlinedIcon onClick={() => goToFeed(history)} /></div>
+
+            <div><ShoppingCartOutlinedIcon onClick={() => goToCart(history)} /></div>
+
+            <div><PersonOutlineOutlinedIcon onClick={() => goToProfile(history)} /></div>
+
         </Foot>
     )
 }

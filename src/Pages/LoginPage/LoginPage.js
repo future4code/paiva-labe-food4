@@ -10,9 +10,7 @@ import LogoColored from "../../assets/LogoRappi4Colored.svg";
 import { goToSignUp } from "../../Routes/coordinator";
 import LoginForm from "./LoginForm";
 import { useHistory } from "react-router-dom";
-
 import SplashPage from "../SplashPage/SplashPage";
-
 
 const LoginPage = () => {
   const history = useHistory();
