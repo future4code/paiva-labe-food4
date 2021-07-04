@@ -49,6 +49,19 @@ const SignupAddForm = () => {
                     autoFocus
                 />
                 <TextField
+                    value={form.complement}
+                    onChange={onChange}
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="complement"
+                    label="Complemento"
+                    name="complement"
+                    autoComplete="complement"
+                    autoFocus
+                />
+                <TextField
                     value={form.neighbourhood}
                     onChange={onChange}
                     variant="outlined"

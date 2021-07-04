@@ -1,11 +1,10 @@
 import styled from "styled-components"
 import { primaryColor } from "../../constants/colors"
 
-
 export const RectanguleArea = styled.div`
-  width: 100vw;
-  height: 100vh;
-  padding: 43vh 20vw 25vw;
+  width: 100rem;
+  height: 100rem;
+  padding: 15rem 10rem 12rem;
   background-color: ${primaryColor}; 
   display: flex;
   flex-direction: column;
@@ -13,8 +12,8 @@ export const RectanguleArea = styled.div`
   text-align: center;
 `
 export const LogoBoard = styled.img`
-  width: 60vw;
-  height: 10vh;
+  width: 30rem;
+  height: 5rem;
   display: flex;
   align-items: center;
   justify-items: center;

@@ -8,8 +8,8 @@ const useForm = (initialState) => {
         setForm({ ...form, [name]: value })
     }
     const clear = () => {
-        setForm(initialState)
+        setForm('')
     }
-    return [form, onChange, clear]
+    return [form, setForm, onChange, clear]
 }
 export default useForm;

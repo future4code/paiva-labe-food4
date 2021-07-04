@@ -1,15 +1,15 @@
 import { useHistory } from 'react-router-dom'
-import { useLayoutEffect } from 'react'
-import { goToFeed } from '../Routes/coordinator'
+import { useEffect } from 'react'
 
 const useUnprotectedPage = () => {
     const history = useHistory()
-    useLayoutEffect(() => {
+
+    useEffect(() => {
         const token = localStorage.getItem('token')
         if (token) {
-            goToFeed(history)
+            history.push('/feed')
         }
-    }, [history])
+    })
 }
 
 export default useUnprotectedPage

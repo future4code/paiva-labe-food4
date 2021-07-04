@@ -53,19 +53,20 @@ www.link.com.br
 <br/>
 
 ### O que funciona:
-- 
-- 
-- 
--
-
+- Página de Login 
+- Renderização dos cards dos restaurantes
+- Pesquisa por categoria
+- Página de cadastro de endereço
+- SplashScreen
 <br/>
 
 ### O que não funciona: 
-- 
-- 
-- 
--
-
-rappi4B
+- Página de cadastro
+- Campo de busca
+- Página de Menu 
+- Profile
+- Requisições de atualização profile e endereço
+<br/> 
+rappi4B  
 https://zpl.io/scene/aX1LDOP
 

@@ -5,10 +5,11 @@ import useForm from "../../hooks/useForm";
 import { useHistory } from "react-router-dom";
 import { login } from "../../services/User";
 import { goToFeed } from "../../Routes/coordinator";
+import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 
 const LoginForm = () => {
   const history = useHistory();
-  const [form, onChange, clear] = useForm({ email: "", password: "" });
+  const [form, setForm, onChange, clear] = useForm({ email: "", password: "" });
 
   const onSubmitForm = (e) => {
     e.preventDefault();
@@ -17,34 +18,37 @@ const LoginForm = () => {
   return (
     <LoginContainer>
       <Typography variant="h6">Entrar</Typography>
-      <form obSubmit={onSubmitForm}>
+      <form onSubmit={onSubmitForm}>
         <TextField
-          id={"email"}
-          name={"email"}
+          name="email"
           value={form.email}
           onChange={onChange}
-          type={"email"}
-          label={"E-mail"}
-          variant={"outlined"}
+          type="email"
+          label="E-mail"
+          variant="outlined"
           required
-          margin={"normal"}
+          margin="normal"
           autoFocus
           fullWidth
+          id="email"
+          autoComplete="email"
         />
         <TextField
-          id={"password"}
-          name={"password"}
+          id="password"
+          name="password"
           value={form.password}
           onChange={onChange}
-          type={"password"}
-          label={"Senha"}
-          variant={"outlined"}
+          type="password"
+          label="Senha"
+          variant="outlined"
           required
-          margin={"normal"}
+          margin="normal"
           autoFocus
           fullWidth
+          id="password"
+          autoComplete="password"
         />
-        <Button type={"submit"} variant={"contained"} color={"primary"} fullWidth onClick={() => goToFeed(history)}>
+        <Button type={"submit"} variant={"contained"} color={"primary"} fullWidth >
           Entrar
         </Button>
       </form>

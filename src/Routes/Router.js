@@ -7,7 +7,7 @@ import FeedPage from "../Pages/FeedPage/FeedPage";
 import MenuPage from "../Pages/MenuPage/MenuPage";
 import { ProfilePage } from "../Pages/ProfilePage/ProfilePage";
 import CartPage from "../Pages/CartPage/CartPage";
-import { Error } from "../Pages/Error/Error";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const Router = () => {
   return (
@@ -20,9 +20,7 @@ const Router = () => {
         <Route exact path="/menu" component={MenuPage} />
         <Route exact path="/profile" component={ProfilePage} />
         <Route exact path="/cart" component={CartPage} />
-        <Route>
-          <Error />
-        </Route>
+        <Route component={ErrorPage} />
       </Switch>
     </BrowserRouter>
   );

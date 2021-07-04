@@ -8,7 +8,7 @@ import useForm from '../../hooks/useForm';
 
 const SignupForm = () => {
     const history = useHistory();
-    const [form, onChange, clear] = useForm({ name: "", email: "", cpf: "", password: "" });
+    const [form, onChange, clear, setForm] = useForm({ name: "", email: "", cpf: "", password: "" });
 
     const onSubmitForm = (e) => {
         e.preventDefault();
@@ -30,9 +30,8 @@ const SignupForm = () => {
                     required
                     fullWidth
                     id="name"
-                    label="Nome"
+                    label="Nome e sobrenome"
                     name="name"
-                    autoComplete="name"
                     autoFocus
                 />
                 <TextField
@@ -45,7 +44,6 @@ const SignupForm = () => {
                     id="email"
                     label="E-mail"
                     name="email"
-                    autoComplete="email"
                     autoFocus
                 />
                 <TextField
@@ -53,11 +51,14 @@ const SignupForm = () => {
                     margin="normal"
                     value={form.cpf}
                     onChange={onChange}
-                    inputProps={{ pattern: "[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" }}
+                    inputProps={{
+                        maxLength: 14,
+                        pattern: `([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})`,
+                    }}
                     required
                     fullWidth
                     name="cpf"
-                    label="CPF"
+                    label="CPF 000.000.000-00"
                     id="cpf"
                 />
                 <TextField
@@ -65,10 +66,11 @@ const SignupForm = () => {
                     margin="normal"
                     value={form.password}
                     onChange={onChange}
+                    inputProps={{ minLength: 6 }}
                     required
                     fullWidth
                     name="password"
-                    label="Senha"
+                    label="Senha - 6 caracteres"
                     type="password"
                     id="password"
                 />
@@ -79,8 +81,8 @@ const SignupForm = () => {
                     onChange={onChange}
                     required
                     fullWidth
-                    name="confirm"
-                    label="Confirmar a senha"
+                    name="confirm-password"
+                    label="Confirmar senha"
                     type="password"
                     id="confirm"
                 />
@@ -94,6 +96,7 @@ const SignupForm = () => {
                     Continuar Cadastro
                 </Button>
             </form>
+            {console.log(form)}
         </SignUpContainer>
     )
 }

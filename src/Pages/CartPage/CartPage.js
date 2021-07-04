@@ -2,7 +2,7 @@ import React from 'react'
 import useProtectedPage from '../../hooks/useProtectedPage'
 
 const CartPage = () => {
-    useProtectedPage()
+    //useProtectedPage()
 
     return (
         <div>CartPage</div>
