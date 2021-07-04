@@ -69,4 +69,9 @@ www.link.com.br
 <br/> 
 rappi4B  
 https://zpl.io/scene/aX1LDOP
+<br/>
+
+Usuário e senha cadastrados: 
+drica@hotmail.com 
+123456
 

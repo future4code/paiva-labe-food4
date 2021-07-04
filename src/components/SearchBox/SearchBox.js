@@ -6,7 +6,6 @@ import { useHistory } from 'react-router-dom';
 import { GlobalStateContext } from '../../global/GlobalStateContext';
 import { getRestaurants } from "../../services/restaurant";
 import RestCard from '../RestCard/RestCard';
-import useControlInput from "../../hooks/useControlInput.js";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,9 +32,8 @@ const SearchBox = () => {
     const history = useHistory();
     const { restaurants, setters } = useContext(GlobalStateContext);
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-    const [search, handleSearch] = useControlInput();
 
-    const filterSearch = () => {
+    /* const filterSearch = () => {
         if (restaurants && restaurants.length > 0) {
             const filtered = restaurants.filter((restaurant) => {
                 return restaurant.name.toLowerCase().includes(search.toLowerCase());
@@ -66,7 +64,7 @@ const SearchBox = () => {
                 id={restaurant.id}
             />
         );
-    });
+    }); */
 
     return (
         <div>

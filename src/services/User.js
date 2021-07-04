@@ -10,8 +10,8 @@ export const login = (body, clear, history) => {
       goToFeed(history);
       clear();
     })
-    .catch((err) => {
-      alert(err.response.data.message);
+    .catch((error) => {
+      alert(error.response.data.message);
     });
 };
 
@@ -62,7 +62,6 @@ export const setProfile = () => {
       setProfile(res.data.user);
     })
     .catch((err) => {
-      console.log(err);
       alert("ERRO CATCH (TESTE)");
     });
 };

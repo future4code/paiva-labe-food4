@@ -96,7 +96,6 @@ const SignupForm = () => {
                     Continuar Cadastro
                 </Button>
             </form>
-            {console.log(form)}
         </SignUpContainer>
     )
 }

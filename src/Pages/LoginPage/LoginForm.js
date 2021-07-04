@@ -4,7 +4,6 @@ import { LoginContainer } from "./styled";
 import useForm from "../../hooks/useForm";
 import { useHistory } from "react-router-dom";
 import { login } from "../../services/User";
-import { goToFeed } from "../../Routes/coordinator";
 import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 
 const LoginForm = () => {
@@ -46,7 +45,6 @@ const LoginForm = () => {
           autoFocus
           fullWidth
           id="password"
-          autoComplete="password"
         />
         <Button type={"submit"} variant={"contained"} color={"primary"} fullWidth >
           Entrar
