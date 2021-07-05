@@ -48,7 +48,7 @@ Website de uma empresa que intermedia pedidos e entregas de restaurantes
 <br/>
 
 ### Link: 
-www.link.com.br
+https://paiva-labe-food4.surge.sh
 
 <br/>
 
@@ -71,7 +71,4 @@ rappi4B
 https://zpl.io/scene/aX1LDOP
 <br/>
 
-Usuário e senha cadastrados: 
-drica@hotmail.com 
-123456
 
