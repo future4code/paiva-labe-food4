@@ -50,6 +50,9 @@ Website de uma empresa que intermedia pedidos e entregas de restaurantes
 ### Link: 
 https://determined-rest.surge.sh    
 
+usuário: joao123@gmail.com 
+senha: joao123
+
 
 <br/>
 
