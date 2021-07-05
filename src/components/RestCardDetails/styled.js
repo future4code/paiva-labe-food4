@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BlockContainer = styled.div`
   height: 250px;
-  width: 77.5vw;
+  width: 80vw;
   display: flex; 
   flex-direction: column;
   align-items: center; 
@@ -23,17 +23,14 @@ export const DetailsContainer = styled.div`
 export const ContainerImg = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;  
-  padding-bottom: 0px;
+  align-items: flex-start; 
 `;
 
 export const StyledImg = styled.img`
   height: 100px;
-  width: 77.5vw;
+  width: 80vw;
   border-top-left-radius: 8px;
-  border-top-right-radius:8px;
-  margin: 0 0 0px;
-  padding: 0;
+  border-top-right-radius:8px; 
 `;
 
 export const ContentContainer = styled.div`  
@@ -43,7 +40,7 @@ export const ContentContainer = styled.div`
   flex-direction: row;
   align-items:center;
   color: #E86E5A;
-  padding-left:10px;
+  padding-left:8px;
   margin: 2px 16px 4px;
   font-size: 16px;
   font-family: 'Roboto', sans-serif; 
@@ -63,7 +60,7 @@ export const ContentContainer2 = styled.div`
   justify-content: space-between;
   padding-right: 15px;
   color: #b8b8b8;
-  padding-left:8px;
+  padding-left:4px;
   font-family: 'Roboto', sans-serif; 
   font-size: 16px;
   font-weight: normal;
@@ -71,7 +68,7 @@ export const ContentContainer2 = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.39px;  
-  margin: 4px 8px 4px 16px;
+  margin: 4px 8px 4px 16px;  
 `;
 
 export const ContentContainer3 = styled.div`  
@@ -80,7 +77,7 @@ export const ContentContainer3 = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding-left: 2px;
+  //padding-left: 1px;
   font-family: 'Roboto', sans-serif; 
   font-size: 16px;
   font-weight: bold;
@@ -89,17 +86,18 @@ export const ContentContainer3 = styled.div`
   line-height: normal;
   letter-spacing: -0.39px;  
   margin: 4px 8px 4px 16px;
+  p{
+    padding-right:0.5rem;
+  }
 `;
 
-export const TitleContainer= styled.div`
-    width:100vw;
-    height:16vh;
+export const TitleContainer = styled.div`  
    p{
     width:100vw;
     height:13vh;
     text-align:start;
-    margin-left: 40px;
-    padding-top: 48px;    
+    margin-left: 58px;
+    padding-top:50px;    
     font-family: Roboto;
     font-size: 16px;
     font-weight: normal;
@@ -108,36 +106,29 @@ export const TitleContainer= styled.div`
     line-height: normal;
     letter-spacing: -0.39px;  
    }
-  `; 
+  `;
 
 export const BuyContainer = styled.div`
   height: 250px;
-  width: 77.5vw;
+  width: 80vw;
   display: flex; 
   flex-direction: row;
   align-items: center; 
   border-radius: 8px;
   border: solid 1px #b8b8b8;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 `;
 
 export const BuyImg = styled.img`
   height: 110px;
-  width: 25vw;
+  width: 26vw;
   border-top-left-radius: 8px;
-  border-top-right-radius:8px;
-  margin: 0 0 0px;
-  padding: 0;
-  background-color: white;
+  border-bottom-left-radius:8px; 
 `;
 
 export const BuyContent = styled.div`
   height: 110px;
-  width: 40vw;
-  border-top-left-radius: 8px;
-  border-top-right-radius:8px;
-  margin: 0 0 0px;
-  padding: 0;
+  width: 40vw;     
   display: flex;
   flex-direction: column;
 `;

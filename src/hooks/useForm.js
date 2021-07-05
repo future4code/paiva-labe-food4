@@ -10,6 +10,6 @@ const useForm = (initialState) => {
     const clear = () => {
         setForm(initialState)
     }
-    return [form, onChange, clear]
+    return [form, setForm, onChange, clear]
 }
 export default useForm;

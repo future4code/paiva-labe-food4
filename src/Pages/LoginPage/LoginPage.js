@@ -6,6 +6,7 @@ import {
   MainContainer,
   SignUpDiv,
 } from "./styled";
+import useUnprotectedPage from '../../hooks/useUnprotectedPage'
 import LogoColored from "../../assets/LogoRappi4Colored.svg";
 import { goToSignUp } from "../../Routes/coordinator";
 import LoginForm from "./LoginForm";
@@ -13,6 +14,7 @@ import { useHistory } from "react-router-dom";
 import SplashPage from "../SplashPage/SplashPage";
 
 const LoginPage = () => {
+  //useUnprotectedPage();
   const history = useHistory();
   const [loading, setLoading] = useState(false);
 

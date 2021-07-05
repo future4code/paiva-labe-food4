@@ -1,63 +1,69 @@
-import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
-import InputBase from '@material-ui/core/InputBase';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
-import Paper from '@material-ui/core/Paper'
+import React, { useContext, useState, useEffect } from "react";
 import useProtectedPage from '../../hooks/useProtectedPage'
 import { ScreenContainer, MainContainerFeed, HeaderFeed } from "./styled";
 import Footer from "../../components/Footer/Footer";
-import useRequestData from "../../hooks/useRequestData";
-import { BASE_URL } from "../../constants/urls";
-import { goToMenu } from "../../Routes/coordinator";
 import RestCard from "../../components/RestCard/RestCard";
 import { useHistory } from "react-router-dom";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    padding: '4px 6px 4px 15px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '280px',
-    height: '40px',
-    marginBottom: '10vh',
-    marginTop: '1px'
-  },
-  input: {
-    marginLeft: theme.spacing(1),
-    flex: 6,
-  },
-  iconButton: {
-    padding: 5,
-  },
-}));
+import { GlobalStateContext } from "../../global/GlobalStateContext";
+import { getRestaurants } from "../../services/restaurant";
+import CategoriesBar from "../../components/CategoriesBar/CategoriesBar";
+import SearchBox from "../../components/SearchBox/SearchBox";
 
 const FeedPage = () => {
-  useProtectedPage()
-  const history = useHistory()
-  const getRestaurants = useRequestData(`${BASE_URL}/restaurants`, []);
+  useProtectedPage();
 
-  const onClickCard = () => {
-    goToMenu(history)
-  }
+  const history = useHistory();
+  const [filteredCategoryRestaurants, setFilteredCategoryRestaurants] = useState([]);
+  const { restaurants, currentCategory, setRestaurants } = useContext(GlobalStateContext);
 
-
-  const restaurantsMap = getRestaurants && getRestaurants.restaurants && getRestaurants.restaurants.map((restaurant) => {
+  const restaurantsList = restaurants && restaurants.map((restaurant) => {
     return (
       <RestCard
-        restaurant={restaurant}
         key={restaurant.id}
         name={restaurant.name}
-        image={restaurant.logoUrl}
-        time={restaurant.deliveryTime}
+        title={restaurant.title}
+        deliveryTime={restaurant.deliveryTime}
         shipping={restaurant.shipping}
-        onClick={() => onClickCard(restaurant.id)}
+        image={restaurant.logoUrl}
+        history={history}
+        id={restaurant.id}
       />
-    )
-  })
+    );
+  });
 
-  const classes = useStyles();
+  const filter = () => {
+    if (restaurants && restaurants.length > 0) {
+      const filtered = restaurants.filter((restaurant) => {
+        return restaurant.category.includes(currentCategory);
+      });
+      setFilteredCategoryRestaurants([...filtered]);
+    }
+  };
+
+  const filteredRestaurantsList = filteredCategoryRestaurants.map(
+    (restaurant) => {
+      return (
+        <RestCard
+          key={restaurant.id}
+          name={restaurant.name}
+          deliveryTime={restaurant.deliveryTime}
+          image={restaurant.logoUrl}
+          history={history}
+          id={restaurant.id}
+        />
+      );
+    }
+  );
+
+  const clearFilter = () => {
+    setRestaurants([]);
+  };
+
+  useEffect(() => {
+    getRestaurants(setRestaurants);
+    filter();
+    clearFilter();
+  }, [currentCategory]);
 
   return (
     <ScreenContainer>
@@ -68,20 +74,17 @@ const FeedPage = () => {
         </div>
       </HeaderFeed>
       <MainContainerFeed>
-        <div>
-          <Paper component="form" className={classes.root}>
-            <InputBase
-              className={classes.input}
-              placeholder={"Restaurante"}
-              inputProps={{ 'aria-label': 'search google maps' }}
-            />
-            <IconButton type="submit" className={classes.iconButton} aria-label="search">
-              <SearchIcon />
-            </IconButton>
-          </Paper>
-        </div>
-        {restaurantsMap}
-
+        <SearchBox />
+        <CategoriesBar />
+        {
+          restaurants && restaurants.length !== 0 ?
+            <div>
+              {filteredRestaurantsList.length > 0
+                ? filteredRestaurantsList
+                : restaurantsList}
+            </div>
+            : <p>Carregando...Por favor, aguarde</p>
+        }
       </MainContainerFeed>
       <Footer />
     </ScreenContainer>

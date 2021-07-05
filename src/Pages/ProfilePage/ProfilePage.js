@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useHistory } from "react-router";
-import { setProfile} from "../../services/User"
+import { setProfile } from "../../services/User"
 import useProtectedPage from "../../hooks/useProtectedPage";
 
 import {
@@ -12,28 +12,28 @@ import {
 } from "./styled";
 
 export const ProfilePage = () => {
-  useProtectedPage();
+  //useProtectedPage();
   const [profile, setProfile] = useState();
   const history = useHistory();
 
   return (
-    
-      <ContainerProfilePage>
-        <ContainerUser>
-          <p>Nome: {profile.name}</p>
-          <p>E-mail: {profile.email}</p>
-          <p>CPF: {profile.cpf}</p>
-        </ContainerUser>
 
-        <ContainerAddress>
-          <p>Endereço cadastrado:</p>
-          <p>{profile.address}</p>
-        </ContainerAddress>
+    <ContainerProfilePage>
+      <ContainerUser>
+        <p>Nome: {profile.name}</p>
+        <p>E-mail: {profile.email}</p>
+        <p>CPF: {profile.cpf}</p>
+      </ContainerUser>
 
-        <ContainerOrderHistoric>
-          <p>Histórico de pedidos</p>
-        </ContainerOrderHistoric>
-      </ContainerProfilePage>
-    
+      <ContainerAddress>
+        <p>Endereço cadastrado:</p>
+        <p>{profile.address}</p>
+      </ContainerAddress>
+
+      <ContainerOrderHistoric>
+        <p>Histórico de pedidos</p>
+      </ContainerOrderHistoric>
+    </ContainerProfilePage>
+
   );
 };
