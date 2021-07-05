@@ -13,8 +13,8 @@ import {
 
 export const ProfilePage = () => {
   useProtectedPage();
-  const [profile, setProfile] = useState();
-  //const history = useHistory();
+  const [profile, setProfile] = useState({});
+  const history = useHistory({});
 
   return (
     
